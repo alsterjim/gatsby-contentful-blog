@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 
 export default function BlogPost({ data }) {
   const post = data.contentfulBlogPost
-  var i = 1
-  i = "test"
   return (
       <div>
         <h1>{post.title}</h1>
