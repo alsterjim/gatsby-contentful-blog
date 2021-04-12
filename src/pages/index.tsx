@@ -1,6 +1,5 @@
-import * as React from "react"
-import { graphql, Link } from "gatsby"
-
+import * as React from "react";
+import { graphql, Link } from "gatsby";
 
 const IndexPage = ({ data }) => (
   <div>
@@ -10,16 +9,16 @@ const IndexPage = ({ data }) => (
         <li key={index}>
           <Link to={`${node.slug}`}>{node.title}</Link>
           <div>
-            <img src={node.heroImage.resize.src} alt=''/>
+            <img src={node.heroImage.resize.src} alt="" />
           </div>
           <div>{node.body.childMarkdownRemark.excerpt}</div>
         </li>
       ))}
     </ul>
   </div>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
 export const query = graphql`
   {
@@ -29,7 +28,7 @@ export const query = graphql`
           title
           slug
           body {
-            childMarkdownRemark{
+            childMarkdownRemark {
               excerpt
             }
           }
@@ -42,4 +41,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
