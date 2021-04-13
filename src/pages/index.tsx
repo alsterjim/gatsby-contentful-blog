@@ -18,11 +18,14 @@ const IndexPage = ({ data }: IData) => (
         ({ node, index }: IContentfulData) => (
           <div class="col-lg-4">
             <div class="text-center">
-              <Link to={`${node.slug}`}>{node.title}</Link>
-
-              <div>
-                <img src={node.heroImage.resize.src} alt="" />
-              </div>
+              <Link to={`${node.slug}`}>
+                <div>
+                  {node.title}
+                  <div>
+                    <img src={node.heroImage.resize.src} alt="" />
+                  </div>
+                </div>
+              </Link>
               <div>{node.body.childMarkdownRemark.excerpt}</div>
             </div>
           </div>
