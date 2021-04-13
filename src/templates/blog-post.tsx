@@ -1,10 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-export default function BlogPost({ data }) {
+interface IBlogPost {
+  data: any;
+}
+
+export default function BlogPost({ data }: IBlogPost) {
   const post = data.contentfulBlogPost;
-  var i = 0;
-  i = "";
   return (
     <div>
       <h1>{post.title}</h1>

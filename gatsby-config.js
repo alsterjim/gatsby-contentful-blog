@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
