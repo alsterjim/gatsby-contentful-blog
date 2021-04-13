@@ -11,21 +11,24 @@ interface IContentfulData {
 }
 
 const IndexPage = ({ data }: IData) => (
-  <div>
-    <h1>Jim's Gatsby + Contentful Blog</h1>
-    <ul>
+  <div class="container">
+    <h1 class="text-center">Jim's Gatsby + Contentful Blog</h1>
+    <div class="row">
       {data.allContentfulBlogPost.edges.map(
         ({ node, index }: IContentfulData) => (
-          <li key={index}>
-            <Link to={`${node.slug}`}>{node.title}</Link>
-            <div>
-              <img src={node.heroImage.resize.src} alt="" />
+          <div class="col-lg-4">
+            <div class="text-center">
+              <Link to={`${node.slug}`}>{node.title}</Link>
+
+              <div>
+                <img src={node.heroImage.resize.src} alt="" />
+              </div>
+              <div>{node.body.childMarkdownRemark.excerpt}</div>
             </div>
-            <div>{node.body.childMarkdownRemark.excerpt}</div>
-          </li>
+          </div>
         )
       )}
-    </ul>
+    </div>
   </div>
 );
 
@@ -44,7 +47,7 @@ export const query = graphql`
             }
           }
           heroImage {
-            resize(width: 300, height: 300) {
+            resize(width: 350, height: 350) {
               src
             }
           }
