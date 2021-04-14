@@ -1,10 +1,14 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   plugins: [
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `q4furp8uan13`, // or process.env.CONTENTFUL_SPACE_ID
-        accessToken: `jLICHLw0_i93cg-lUSZcbcfoYOR_b3-K9abvGg72WIo`, // or process.env.CONTENTFUL_TOKEN
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+        accessToken: process.env.GATSBY_CONTENTFUL_TOKEN,
       },
     },
     {
